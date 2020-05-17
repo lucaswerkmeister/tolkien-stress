@@ -3,10 +3,24 @@ import 'chai/register-expect.js';
 
 describe('analyse', () => {
 	const quenyaTestCases = [
+		'ai|nu|LIN|da|lë',
+		'e|ä|REN|dil',
+		'e|len|TÁ|ri',
 		'e|RES|së|a',
+		'na|MÁ|ri|ë',
+		'nú|me|NÓ|rë',
+		'tu|RAM|bar',
 	];
 	const sindarinTestCases = [
+		'ALPH',
 		'A|man',
+		'be|LE|ri|and',
+		'e|RI|a|dor',
+		'FIN|gon',
+		'fin|GOL|fin',
+		'fi|NAR|fin',
+		'me|NEG|roth',
+		'nar|GOTH|rond',
 	];
 	const testCases = [
 		...quenyaTestCases.map((word) => [word, 'Quenya']),
