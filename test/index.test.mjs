@@ -18,6 +18,7 @@ describe('analyse', () => {
 		'ALPH',
 		'A|man',
 		'be|LE|ri|and',
+		'CAIR',
 		'DE|ne|thor',
 		'ec|THE|li|on',
 		'e|RI|a|dor',

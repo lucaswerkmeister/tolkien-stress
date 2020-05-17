@@ -149,13 +149,13 @@ export default function analyse(word, language) {
 		}
 	}
 
-	if (stressedSyllable === null) {
-		stressedSyllable = syllableBreaks.length;
-	}
-
 	// push the syllable break at the beginning, if it didn’t close already
 	if (!(syllableBreaks[syllableBreaks.length - 1] === 0)) {
 		syllableBreaks.push(0);
+	}
+
+	if (stressedSyllable === null) {
+		stressedSyllable = syllableBreaks.length - 1;
 	}
 
 	// all this analysis was end-to-beginning, but now reverse the results for the caller
