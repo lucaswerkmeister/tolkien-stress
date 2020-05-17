@@ -1,24 +1,30 @@
 {
-  "name": "tolkien-stress",
-  "version": "0.1.0",
-  "description": "A function and website to determine the stressed syllable of a word in one of Tolkien’s languages.",
-  "main": "index.mjs",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lucaswerkmeister/tolkien-stress.git"
-  },
-  "keywords": [
-    "tolkien",
-    "quenya",
-    "sindarin"
-  ],
-  "author": "Lucas Werkmeister",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lucaswerkmeister/tolkien-stress/issues"
-  },
-  "homepage": "https://github.com/lucaswerkmeister/tolkien-stress#readme"
+	"name": "tolkien-stress",
+	"version": "0.1.0",
+	"description": "A function and website to determine the stressed syllable of a word in one of Tolkien’s languages.",
+	"main": "index.mjs",
+	"scripts": {
+		"test": "npm run test:lint",
+		"test:lint": "eslint *.mjs"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lucaswerkmeister/tolkien-stress.git"
+	},
+	"keywords": [
+		"tolkien",
+		"quenya",
+		"sindarin"
+	],
+	"author": "Lucas Werkmeister",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/lucaswerkmeister/tolkien-stress/issues"
+	},
+	"homepage": "https://github.com/lucaswerkmeister/tolkien-stress#readme",
+	"devDependencies": {
+		"eslint": "^6.8.0",
+		"eslint-config-airbnb-base": "^14.1.0",
+		"eslint-plugin-import": "^2.20.2"
+	}
 }
