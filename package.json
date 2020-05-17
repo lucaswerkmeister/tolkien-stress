@@ -4,6 +4,7 @@
 	"description": "A function and website to determine the stressed syllable of a word in one of Tolkien’s languages.",
 	"main": "index.mjs",
 	"scripts": {
+		"fix": "eslint --fix *.mjs",
 		"test": "npm run test:lint",
 		"test:lint": "eslint *.mjs"
 	},
