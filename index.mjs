@@ -62,12 +62,19 @@ export default function analyse(word, language) {
 			}
 			break;
 		case 'u':
-			vowel = true;
 			switch (previousLetter) {
+			case 'q':
+				// qu stands for cw in Quenya (and never occurs in Sindarin) – two consonants
+				i--;
+				consonantsSinceLastVowel++;
+				break;
 			case 'i':
 			case 'e':
 			case 'a':
 				diphthong = quenya;
+				/* fall-through */
+			default: // eslint-disable-line no-fallthrough
+				vowel = true;
 				break;
 			}
 			break;

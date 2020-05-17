@@ -11,6 +11,7 @@ describe('analyse', () => {
 		'na|MÁ|ri|ë',
 		'nú|me|NÓ|rë',
 		'O|ro|me',
+		'ta|NI|que|til',
 		'tu|RAM|bar',
 	];
 	const sindarinTestCases = [
