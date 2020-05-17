@@ -2,9 +2,15 @@ import analyse from './../index.mjs';
 import 'chai/register-expect.js';
 
 describe('analyse', () => {
+	const quenyaTestCases = [
+		'e|RES|së|a',
+	];
+	const sindarinTestCases = [
+		'A|man',
+	];
 	const testCases = [
-		['A|man', 'Sindarin'],
-		['e|RES|së|a', 'Quenya'],
+		...quenyaTestCases.map((word) => [word, 'Quenya']),
+		...sindarinTestCases.map((word) => [word, 'Sindarin']),
 	];
 	for (const [testCase, language] of testCases) {
 		let word = '';
