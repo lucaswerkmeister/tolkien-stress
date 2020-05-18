@@ -18,6 +18,10 @@ function display(word, language) {
 	return span;
 }
 
+function prefersReducedMotion() {
+	return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	const wordInput = document.getElementById('word-input');
 	function updateWord() {
@@ -26,7 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		newWord.id = 'word';
 		document.getElementById('word').replaceWith(newWord);
 	}
-	wordInput.addEventListener('input', updateWord);
+	wordInput.addEventListener(prefersReducedMotion() ? 'change' : 'input', updateWord);
+	document.getElementById('analyse').addEventListener('click', updateWord);
 	document.querySelectorAll('input[name=language]').forEach((languageInput) => {
 		languageInput.addEventListener('input', updateWord);
 	});

@@ -1,3 +1,13 @@
 .syllable-stressed {
     font-weight: bold;
 }
+
+#analyse {
+	display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#analyse {
+		display: unset;
+	}
+}
