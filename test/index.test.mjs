@@ -35,7 +35,7 @@ describe('analyse', () => {
 	const testCases = [
 		...quenyaTestCases.map((word) => [word, 'Quenya']),
 		...sindarinTestCases.map((word) => [word, 'Sindarin']),
-	];
+	].sort(([word1, language1], [word2, language2]) => word1.localeCompare(word2));
 	for (const [testCase, language] of testCases) {
 		let word = '';
 		const expectedSyllableBreaks = [0];
