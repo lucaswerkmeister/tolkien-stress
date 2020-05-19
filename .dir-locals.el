@@ -3,5 +3,9 @@
 
 ((nil
   (indent-tabs-mode . t)
-  (tab-width . 4)))
+  (tab-width . 4))
+ (sgml-mode
+  (sgml-basic-offset . 4)))
+
+
 
