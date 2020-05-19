@@ -27,10 +27,6 @@ function display(word, language) {
 	return span;
 }
 
-function prefersReducedMotion() {
-	return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-}
-
 document.addEventListener('DOMContentLoaded', () => {
 	const wordInput = document.getElementById('word-input');
 	function updateWord() {
@@ -44,7 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		newWord.id = oldWord.id;
 		oldWord.replaceWith(newWord);
 	}
-	wordInput.addEventListener(prefersReducedMotion() ? 'change' : 'input', updateWord);
+	const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+	function listenOnWordInput() {
+		wordInput.removeEventListener('change', updateWord);
+		wordInput.removeEventListener('input', updateWord);
+		wordInput.addEventListener(prefersReducedMotionQuery.matches ? 'change' : 'input', updateWord);
+	}
+	prefersReducedMotionQuery.addListener(listenOnWordInput);
+	listenOnWordInput();
 	document.getElementById('analyse').addEventListener('click', updateWord);
 	document.querySelectorAll('input[name=language]').forEach((languageInput) => {
 		languageInput.addEventListener('input', updateWord);
