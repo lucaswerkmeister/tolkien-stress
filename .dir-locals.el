@@ -4,8 +4,13 @@
 ((nil
   (indent-tabs-mode . t)
   (tab-width . 4))
+ (css-mode
+  (css-indent-offset . 4))
+ (js-mode
+  (js-indent-level . 4))
  (sgml-mode
   (sgml-basic-offset . 4)))
+
 
 
 
