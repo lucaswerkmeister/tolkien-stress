@@ -1,9 +1,18 @@
 import analyse from './index.mjs';
 
+function languageCode(language) {
+	switch (language) {
+	case 'Quenya': return 'qya';
+	case 'Sindarin': return 'sjn';
+	default: throw new Error(`Unknown language ${language}!`);
+	}
+}
+
 function display(word, language) {
 	const { syllableBreaks, stressedSyllable } = analyse(word, language);
 	const span = document.createElement('span');
 	span.classList.add('word', `word-${language}`);
+	span.lang = languageCode(language);
 	for (let i = 0; i < syllableBreaks.length - 1; i++) {
 		const start = syllableBreaks[i];
 		const end = syllableBreaks[i + 1];
