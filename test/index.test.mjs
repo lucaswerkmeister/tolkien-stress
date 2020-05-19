@@ -22,6 +22,7 @@ describe('analyse', () => {
 		'CAIR',
 		'DE|ne|thor',
 		'ec|THE|li|on',
+		'E|myn',
 		'e|RI|a|dor',
 		'FË|a|nor',
 		'FIN|gon',
