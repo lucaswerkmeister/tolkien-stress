@@ -5,6 +5,7 @@ describe('analyse', () => {
 	const quenyaTestCases = [
 		'ai|nu|LIN|da|lë',
 		'an|CA|li|ma',
+		'ca|la|CIR|ya',
 		'e|ä|REN|dil',
 		'e|len|TÁ|ri',
 		'e|RES|së|a',
