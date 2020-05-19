@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const newWord = display(word, language);
 		newWord.id = oldWord.id;
 		oldWord.replaceWith(newWord);
+		wordInput.lang = newWord.lang;
 	}
 	function updatePlaceholder() {
 		wordInput.placeholder = placeholderWord(languageValue());
