@@ -8,6 +8,14 @@ function languageCode(language) {
 	}
 }
 
+function placeholderWord(language) {
+	switch (language) {
+	case 'Quenya': return 'Elessar';
+	case 'Sindarin': return 'Mithrandir';
+	default: throw new Error(`Unknown language ${language}!`);
+	}
+}
+
 function display(word, language) {
 	const { syllableBreaks, stressedSyllable } = analyse(word, language);
 	const span = document.createElement('span');
@@ -27,11 +35,15 @@ function display(word, language) {
 	return span;
 }
 
+function languageValue() {
+	return document.querySelector('input[name=language]:checked').value;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	const wordInput = document.getElementById('word-input');
 	function updateWord() {
 		const word = wordInput.value.normalize('NFC');
-		const language = document.querySelector('input[name=language]:checked').value;
+		const language = languageValue();
 		const oldWord = document.getElementById('word');
 		if (oldWord.textContent === word && oldWord.lang === languageCode(language)) {
 			return;
@@ -39,6 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		const newWord = display(word, language);
 		newWord.id = oldWord.id;
 		oldWord.replaceWith(newWord);
+	}
+	function updatePlaceholder() {
+		wordInput.placeholder = placeholderWord(languageValue());
 	}
 	const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 	function listenOnWordInput() {
@@ -51,6 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.getElementById('analyse').addEventListener('click', updateWord);
 	document.querySelectorAll('input[name=language]').forEach((languageInput) => {
 		languageInput.addEventListener('input', updateWord);
+		languageInput.addEventListener('input', updatePlaceholder);
 	});
 	updateWord();
+	updatePlaceholder();
 });
