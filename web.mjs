@@ -34,10 +34,15 @@ function prefersReducedMotion() {
 document.addEventListener('DOMContentLoaded', () => {
 	const wordInput = document.getElementById('word-input');
 	function updateWord() {
+		const word = wordInput.value.normalize('NFC');
 		const language = document.querySelector('input[name=language]:checked').value;
-		const newWord = display(wordInput.value.normalize('NFC'), language);
+		const oldWord = document.getElementById('word');
+		if (oldWord.textContent === word && oldWord.lang === languageCode(language)) {
+			return;
+		}
+		const newWord = display(word, language);
 		newWord.id = 'word';
-		document.getElementById('word').replaceWith(newWord);
+		oldWord.replaceWith(newWord);
 	}
 	wordInput.addEventListener(prefersReducedMotion() ? 'change' : 'input', updateWord);
 	document.getElementById('analyse').addEventListener('click', updateWord);
