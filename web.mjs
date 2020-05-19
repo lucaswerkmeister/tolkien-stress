@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			return;
 		}
 		const newWord = display(word, language);
-		newWord.id = 'word';
+		newWord.id = oldWord.id;
 		oldWord.replaceWith(newWord);
 	}
 	wordInput.addEventListener(prefersReducedMotion() ? 'change' : 'input', updateWord);
