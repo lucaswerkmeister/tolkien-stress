@@ -10,7 +10,3 @@
   (js-indent-level . 4))
  (sgml-mode
   (sgml-basic-offset . 4)))
-
-
-
-
