@@ -2,7 +2,7 @@
  * Analyse the word in the given language (Quenya or Sindarin).
  *
  * Returns the list of syllable breaks and the index of the stressed syllable.
- * The syllable breaks are char indexes in the word string,
+ * The syllable breaks are char indices in the word string,
  * and include both the beginning and the end of the word.
  *
  * @param {string} word The word to analyse. Must be in NFC form.
