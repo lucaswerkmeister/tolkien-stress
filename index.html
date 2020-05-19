@@ -1,15 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<title>Tolkien Word Analyser</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<script src="./web.mjs" type="module"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 		<link rel="stylesheet" href="./web.css">
 	</head>
 	<body>
-		<input id="word-input" type="text">
-		<label><input name="language" type="radio" value="Quenya">Quenya</label>
-		<label><input name="language" type="radio" value="Sindarin" checked>Sindarin</label>
-		<button id="analyse" type="button">Analyse</button>
-		<span id="word"></span>
+		<div class="container">
+			<div class="form-group">
+				<label for="word-input">The word to analyse:</label>
+				<input id="word-input" class="form-control" type="text">
+			</div>
+			<fieldset class="form-group">
+				<div id="language-explanation" class="form-text">
+					The language of the word (when in doubt, try Sindarin):
+				</div>
+				<div class="form-check">
+					<input name="language" type="radio" value="Quenya" aria-describedby="language-explanation" id="quenya" class="form-check-input">
+					<label for="quenya" class="form-check-label">Quenya</label>
+				</div>
+				<div class="form-check">
+					<input name="language" type="radio" value="Sindarin" checked aria-describedby="language-explanation" id="sindarin" class="form-check-input">
+					<label for="sindarin" class="form-check-label">Sindarin</label>
+				</div>
+			</fieldset>
+			<button id="analyse" type="button" class="btn btn-primary">Analyse</button>
+			<p class="form-text">
+				Result:
+				<span id="word"></span>
+			</p>
+		</div>
 	</body>
 </html>
