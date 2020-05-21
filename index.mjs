@@ -151,7 +151,11 @@ export default function analyse(word, language) {
 
 	// push the syllable break at the beginning, if it didn’t close already
 	if (!(syllableBreaks[syllableBreaks.length - 1] === 0)) {
-		syllableBreaks.push(0);
+		if (haveVowel) {
+			syllableBreaks.push(0);
+		} else {
+			syllableBreaks[syllableBreaks.length - 1] = 0;
+		}
 	}
 
 	if (stressedSyllable === null) {
