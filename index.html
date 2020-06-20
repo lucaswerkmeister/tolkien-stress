@@ -11,14 +11,16 @@
 	<body>
 		<div class="container">
 			<h1>Tolkien Word Analyser</h1>
-			<div class="form-group">
-				<label for="word-input">The word to analyse:</label>
-				<input id="word-input" class="form-control" type="text" lang="sjn" placeholder="Mithrandir">
-			</div>
 			<fieldset class="form-group">
-				<div id="language-explanation" class="form-text">
+				<legend>
+					<label for="word-input">The word to analyse:</label>
+				</legend>
+				<input id="word-input" class="form-control" type="text" lang="sjn" placeholder="Mithrandir">
+			</fieldset>
+			<fieldset class="form-group">
+				<legend id="language-explanation" class="form-text">
 					The language of the word (when in doubt, try Sindarin):
-				</div>
+				</legend>
 				<div class="form-check">
 					<input name="language" type="radio" value="Quenya" aria-describedby="language-explanation" id="quenya" class="form-check-input">
 					<label for="quenya" class="form-check-label">Quenya</label>
