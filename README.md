@@ -1,4 +1,4 @@
-# Tolkien Word Analyser
+# Tolkien Stress Analyser
 
 A website to determine the stressed syllable of a word in one of Tolkien’s languages.
 Work in progress.
