@@ -33,6 +33,167 @@
 				Result:
 				<span id="word"></span>
 			</p>
+			<div class="card">
+				<h2 class="card-header">How does this work?</h2>
+				<div class="card-body">
+					<p>
+						The rules for pronouncing words in Tolkien’s languages
+						are laid out in The Lord of the Rings, Appendix E.
+						Stress, in particular, works like this (for both Quenya and Sindarin):
+					</p>
+					<p>
+						By default, words are stressed on the third-to-last syllable.
+						(This doesn’t mean that the third-to-last syllable is <em>usually</em> the stressed one –
+						the below exceptions are not uncommon –
+						merely that this is where the stress goes if no exception applies.)
+						For example:
+						<span class="word word-Sindarin" lang="sjn"><span class="syllable syllable-stressed">A</span><span class="syllable">ra</span><span class="syllable">gorn</span></span>,
+						<span class="word word-Sindarin" lang="sjn"><span class="syllable syllable-stressed">Bo</span><span class="syllable">ro</span><span class="syllable">mir</span></span>,
+						<span class="word word-Sindarin" lang="sjn"><span class="syllable syllable-stressed">De</span><span class="syllable">ne</span><span class="syllable">thor</span></span>.
+						<!-- TODO Quenya examples? -->
+					</p>
+					<p>
+						The stress falls on the second-to-last syllable if that contains:
+					</p>
+					<ul>
+						<li>
+							<p>
+								A long vowel,
+								marked with an acute accent
+								(<span class="fragment">á</span>, <span class="fragment">é</span>, <span class="fragment">í</span>, <span class="fragment">ó</span>, <span class="fragment">ú</span>).
+								For example:
+								<span class="word word-Quenya" lang="qya"><span class="syllable">E</span><span class="syllable">len</span><span class="syllable syllable-stressed">tá</span><span class="syllable">ri</span></span>,
+								<span class="word word-Quenya" lang="qya"><span class="syllable">Cui</span><span class="syllable">vi</span><span class="syllable syllable-stressed">é</span><span class="syllable">nen</span></span>,
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable">Ce</span><span class="syllable">leb</span><span class="syllable syllable-stressed">rí</span><span class="syllable">an</span></span>,
+								<span class="word word-Quenya" lang="qya"><span class="syllable">Pe</span><span class="syllable syllable-stressed">ló</span><span class="syllable">ri</span></span>,
+								<span class="word word-Quenya" lang="qya"><span class="syllable">An</span><span class="syllable syllable-stressed">dú</span><span class="syllable">ril</span></span>.
+							</p>
+						</li>
+						<li>
+							<p>
+								A diphthong.
+								For example:
+								<span class="word word-Quenya" lang="qya"><span class="syllable syllable-stressed">Sau</span><span class="syllable">ron</span></span>,
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable syllable-stressed">Gwai</span><span class="syllable">hir</span></span>,
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable">Cris</span><span class="syllable syllable-stressed">saeg</span><span class="syllable">rim</span></span>,
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable">Fin</span><span class="syllable syllable-stressed">dui</span><span class="syllable">las</span></span>,
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable">Mi</span><span class="syllable syllable-stressed">thei</span><span class="syllable">thel</span></span>,
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable">Ne</span><span class="syllable syllable-stressed">nui</span><span class="syllable">al</span></span>.
+							</p>
+							<p>
+								The vowel pairs that form diphthongs vary by language:
+								in Quenya, the diphthongs are
+								<span class="fragment">ui</span>/<span class="fragment">oi</span>/<span class="fragment">ai</span>
+								and <span class="fragment">iu</span>/<span class="fragment">eu</span>/<span class="fragment">au</span>,
+								whereas in Sindarin they are
+								<span class="fragment">ae</span>, <span class="fragment">ai</span>, <span class="fragment">ei</span>, <span class="fragment">oe</span>, <span class="fragment">ui</span>, and <span class="fragment">au</span>.
+								Put differently,
+								<span class="fragment">ui</span>, <span class="fragment">ai</span> and <span class="fragment">au</span> are always diphthongs,
+								<span class="fragment">oi</span>, <span class="fragment">iu</span> and <span class="fragment">eu</span> are only diphthongs in Quenya,
+								and <span class="fragment">ae</span>, <span class="fragment">ei</span> and <span class="fragment">oe</span> are only diphthongs in Sindarin.
+								That said, the latter six pairs seem to be rare in the language where they’re not a diphthong.
+							</p>
+							<p>
+								Vowel pairs which aren’t diphtongs are sometimes distinguished with a trema,
+								as in
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable syllable-stressed">Fë</span><span class="syllable">a</span><span class="syllable">nor</span></span>,
+								<span class="word word-Quenya" lang="qya"><span class="syllable">Na</span><span class="syllable syllable-stressed">má</span><span class="syllable">ri</span><span class="syllable">ë</span></span>,
+								<span class="word word-Quenya" lang="qya"><span class="syllable">E</span><span class="syllable syllable-stressed">ön</span><span class="syllable">wë</span></span>;
+								but this is not always done,
+								as in
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable syllable-stressed">Mo</span><span class="syllable">ri</span><span class="syllable">a</span></span>,
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable">I</span><span class="syllable syllable-stressed">thi</span><span class="syllable">li</span><span class="syllable">en</span></span>,
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable">E</span><span class="syllable syllable-stressed">ri</span><span class="syllable">a</span><span class="syllable">dor</span></span>,
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable">Os</span><span class="syllable syllable-stressed">gi</span><span class="syllable">li</span><span class="syllable">ath</span></span>,
+								all of which feature nondiphthongal vowel pairs and are not usually written with a trema.
+							</p>
+						</li>
+						<li>
+							<p>
+								A vowel followed by two or more consonants.
+								For example:
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable">Mith</span><span class="syllable syllable-stressed">ran</span><span class="syllable">dir</span></span>,
+								<span class="word word-Quenya" lang="qya"><span class="syllable">E</span><span class="syllable syllable-stressed">len</span><span class="syllable">dil</span></span>,
+								<span class="word word-Quenya" lang="qya"><span class="syllable">I</span><span class="syllable syllable-stressed">sil</span><span class="syllable">dur</span></span>,
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable">Tho</span><span class="syllable syllable-stressed">ron</span><span class="syllable">dor</span></span>,
+								<span class="word word-Quenya" lang="qya"><span class="syllable">U</span><span class="syllable syllable-stressed">tum</span><span class="syllable">no</span></span>.
+							</p>
+							<p>
+								This includes double consonants, which represent a longer version of the same consonant, for example:
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable">Mo</span><span class="syllable syllable-stressed">ran</span><span class="syllable">non</span></span>,
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable">Pe</span><span class="syllable syllable-stressed">len</span><span class="syllable">nor</span></span>,
+								<span class="word word-Quenya" lang="qya"><span class="syllable">E</span><span class="syllable syllable-stressed">les</span><span class="syllable">sar</span></span>,
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable">Bra</span><span class="syllable syllable-stressed">gol</span><span class="syllable">lach</span></span>.
+							</p>
+							<p>
+								Note that <span class="fragment">ch</span>, <span class="fragment">dh</span>, <span class="fragment">th</span> count as <em>single</em> consonants here;
+								therefore
+								<!--
+									I have not found any suitable example with a second syllable followed by ch plus a consonant.
+									Presumably, one could be constructed by prefixing a third syllable to Sindarin rochben, rider;
+									however, I have no idea if any such composition is present in Tolkien’s writing.
+								  -->
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable">Ca</span><span class="syllable syllable-stressed">radh</span><span class="syllable">ras</span></span>,
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable">Nar</span><span class="syllable syllable-stressed">goth</span><span class="syllable">rond</span></span>,
+								but
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable syllable-stressed">Fo</span><span class="syllable">ro</span><span class="syllable">chel</span></span>,
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable syllable-stressed">Ga</span><span class="syllable">la</span><span class="syllable">dhon</span></span>,
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable syllable-stressed">De</span><span class="syllable">ne</span><span class="syllable">thor</span></span>.
+							</p>
+						</li>
+					</ul>
+					<p>
+						If there are less than three syllables, the first syllable is stressed,
+						as in
+						<span class="word word-Sindarin" lang="sjn"><span class="syllable syllable-stressed">A</span><span class="syllable">mon</span></span>
+						<span class="word word-Sindarin" lang="sjn"><span class="syllable syllable-stressed">A</span><span class="syllable">marth</span></span>,
+						<span class="word word-Sindarin" lang="sjn"><span class="syllable syllable-stressed">Grond</span></span>.
+					</p>
+					<p>
+						For the division of words into syllables themselves,
+						two aspects are worth noting:
+					</p>
+					<ul>
+						<li>
+							<p>
+								<span class="fragment">y</span> is a consonant in Quenya, but a vowel in Sindarin.
+								Thus, in Quenya
+								<span class="word word-Quenya" lang="qya"><span class="syllable">Ca</span><span class="syllable">la</span><span class="syllable syllable-stressed">cir</span><span class="syllable">ya</span></span>,
+								stress falls on the <span class="fragment">cir</span> syllable because its vowel is followed by two consonants (<span class="fragment">r</span> and <span class="fragment">y</span>),
+								whereas in Sindarin the <span class="fragment">y</span> would be a vowel and therefore its own syllable
+								(though the stress would still fall on the <span class="fragment">cir</span> syllable, since it would then be the third-to-last syllable).
+								On the other hand, a name like
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable syllable-stressed">E</span><span class="syllable">myn</span></span>
+								<span class="word word-Sindarin" lang="sjn"><span class="syllable syllable-stressed">Muil</span></span>
+								can only be Sindarin, since in Quenya the <span class="fragment">myn</span> would be an unpronounceable jumble of three consonants.
+							</p>
+						</li>
+						<li>
+							<p>
+								Also, in Quenya the sequence <span class="fragment">qu</span> represents two consonants (<span class="fragment">cw</span>),
+								and the <span class="fragment">u</span> therefore does not constitute a syllable of its own.
+								However, a <span class="fragment">qu-</span> syllable is often followed by another,
+								and so it is rare that these two consonants actually make a syllable stressed that wouldn’t be stressed anyways (as the third-to-last syllable);
+								two examples are
+								<span class="word word-Quenya" lang="qya"><span class="syllable">a</span><span class="syllable syllable-stressed">ta</span><span class="syllable">quë</span></span>,
+								<span class="word word-Quenya" lang="qya"><span class="syllable">o</span><span class="syllable syllable-stressed">to</span><span class="syllable">quë</span></span>.
+								(In Sindarin, <span class="fragment">qu</span> does not occur.)
+							</p>
+						</li>
+					</ul>
+					<p>
+						Finally, keep in mind that not all names in Tolkien’s works follow these rules.
+						For instance, the Elvish rules would mandate that Isengard is stressed
+						<span class="word"><span class="syllable">I</span><span class="syllable syllable-stressed">sen</span><span class="syllable">gard</span></span>,
+						since the <span class="fragment">e</span> is followed by two consonants;
+						however, the word is actually of English form,
+						translated from the language of the Rohirrim,
+						and therefore stressed as would be more natural in English:
+						<span class="word"><span class="syllable syllable-stressed">I</span><span class="syllable">sen</span><span class="syllable">gard</span></span>.
+						(Elvish pronunciation would also dictate that the <span class="fragment">i</span> is that of “machine”, rather than that of “iron”.)
+					</p>
+				</div>
+			</div>
 		</div>
 		<a href="https://github.com/lucaswerkmeister/tolkien-stress/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 	</body>

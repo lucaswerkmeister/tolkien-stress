@@ -2,6 +2,10 @@
     font-weight: bold;
 }
 
+.fragment {
+	font-style: italic;
+}
+
 #analyse {
 	display: none;
 }
