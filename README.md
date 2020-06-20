@@ -6,9 +6,10 @@ Work in progress.
 ## Resources
 
 - The Lord of the Rings, Appendix E
-- To determine whether a word is Quenya or Sindarin (for the tests):
+- To determine whether a word is Quenya or Sindarin (for the tests and the explanation section):
   - [Quenya dictionary](https://www.ambar-eldaron.com/telechargements/quenya-engl-A4.pdf)
   - [Sindarin dictionary](https://www.jrrvf.com/hisweloke/sindar/online/sindar/dict-sd-en.html)
+  - [Tolkien Gateway](http://tolkiengateway.net/), where most articles helpfully have an “Etymology” section
 
 ## License
 
