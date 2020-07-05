@@ -9,7 +9,7 @@
  * @param {'Quenya'|'Sindarin'} language The language of the word.
  * @returns {{ syllableBreaks: number[], stressedSyllable: number}}
  */
-export default function analyse(word, language) {
+export function analyseWord(word, language) {
 	/** Is the word in Sindarin? */
 	const sindarin = language === 'Sindarin';
 	/** Is the word in Quenya? */
@@ -170,4 +170,45 @@ export default function analyse(word, language) {
 	syllableBreaks.push(word.length);
 
 	return { syllableBreaks, stressedSyllable };
+}
+
+/**
+ * Analyse the text in the given language (Quenya or Sindarin).
+ *
+ * Returns a list of alternating word and non-word segments.
+ * Non-word segments are simply strings (e.g. spaces or hyphens between words),
+ * whereas words segments are objects with the word as a string
+ * and the syllable information as returned by {@link analyseWord}.
+ *
+ * @param {string} text The text to analyse.
+ * @param {'Quenya'|'Sindarin'} language The language of the word.
+ * @returns {({ word: string, syllableBreaks: number[], stressedSyllable: number}|string)[]}
+ */
+export function analyseText(text, language) {
+	text = text.normalize('NFC'); // eslint-disable-line no-param-reassign
+	// based on https://stackoverflow.com/a/57290540/1420237 – effectively \b.+?\b, but with Unicode-aware \b
+	const wordRegexp = /(?:(?<=\p{L})(?=\P{L})|(?<=\P{L})(?=\p{L})|^).+?(?:(?<=\p{L})(?=\P{L})|(?<=\P{L})(?=\p{L})|$)/ug;
+	let match;
+	let endOfLastMatch;
+	let matchIsWord = true;
+	const segments = [];
+	// eslint-disable-next-line no-cond-assign
+	while ((match = wordRegexp.exec(text)) !== null) {
+		const [segment] = match;
+		const { index } = match;
+		if (segments.length === 0 && index > 0) {
+			segments.push(text.substr(0, index));
+		}
+		endOfLastMatch = index + segment.length;
+		if (matchIsWord) {
+			segments.push({ word: segment, ...analyseWord(segment, language) });
+		} else {
+			segments.push(segment);
+		}
+		matchIsWord = !matchIsWord;
+	}
+	if (endOfLastMatch < text.length) {
+		segments.push(text.substr(endOfLastMatch));
+	}
+	return segments;
 }

@@ -1,7 +1,7 @@
-import analyse from './../index.mjs';
+import { analyseWord, analyseText } from './../index.mjs';
 import 'chai/register-expect.js';
 
-describe('analyse', () => {
+describe('analyseWord', () => {
 	const quenyaTestCases = [
 		'ai|nu|LIN|da|lë',
 		'an|CA|li|ma',
@@ -90,9 +90,62 @@ describe('analyse', () => {
 		}
 		word = word.replace(/^./, (char) => char.toUpperCase());
 		it(`correctly analyses ${word} in ${language} (${testCase})`, () => {
-			const { syllableBreaks, stressedSyllable } = analyse(word, language);
+			const { syllableBreaks, stressedSyllable } = analyseWord(word, language);
 			expect(syllableBreaks).to.eql(expectedSyllableBreaks);
 			expect(stressedSyllable).to.equal(expectedStressedSyllable);
 		});
 	}
+});
+
+describe('analyseText', () => {
+	it('correctly analyses “Namárië” in Quenya', () => {
+		const Namárië = 'Ai! laurië lantar lassi súrinen,';
+		const expected = [
+			{ word: 'Ai', syllableBreaks: [0, 2], stressedSyllable: 0 },
+			'! ',
+			{ word: 'laurië', syllableBreaks: [0, 3, 5, 6], stressedSyllable: 0 },
+			' ',
+			{ word: 'lantar', syllableBreaks: [0, 3, 6], stressedSyllable: 0 },
+			' ',
+			{ word: 'lassi', syllableBreaks: [0, 3, 5], stressedSyllable: 0 },
+			' ',
+			{ word: 'súrinen', syllableBreaks: [0, 2, 4, 7], stressedSyllable: 0 },
+			',',
+		];
+		const actual = analyseText(Namárië, 'Quenya');
+		expect(actual).to.eql(expected);
+	});
+
+	it('correctly analyses “A Elbereth Gilthoniel” in Sindarin', () => {
+		const Elbereth = 'A Elbereth Gilthoniel';
+		const expected = [
+			{ word: 'A', syllableBreaks: [0, 1], stressedSyllable: 0 }, 
+			' ',
+			{ word: 'Elbereth', syllableBreaks: [0, 2, 4, 8], stressedSyllable: 0 },
+			' ',
+			{ word: 'Gilthoniel', syllableBreaks: [0, 3, 6, 8, 10], stressedSyllable: 1 },
+		];
+		const actual = analyseText(Elbereth, 'Sindarin');
+		expect(actual).to.eql(expected);
+	});
+
+	it('correctly analyses “Gil-galad” in Sindarin', () => {
+		const expected = [
+			{ word: 'Gil', syllableBreaks: [0, 3], stressedSyllable: 0 },
+			'-',
+			{ word: 'galad', syllableBreaks: [0, 2, 5], stressedSyllable: 0 },
+		];
+		const actual = analyseText('Gil-galad', 'Sindarin');
+		expect(actual).to.eql(expected);
+	});
+
+	it('correctly analyses “Barad-dûr” in Sindarin', () => {
+		const expected = [
+			{ word: 'Barad', syllableBreaks: [0, 2, 5], stressedSyllable: 0 },
+			'-',
+			{ word: 'dûr', syllableBreaks: [0, 3], stressedSyllable: 0 },
+		];
+		const actual = analyseText('Barad-dûr', 'Sindarin');
+		expect(actual).to.eql(expected);
+	});
 });

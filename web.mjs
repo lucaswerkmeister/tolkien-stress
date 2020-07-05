@@ -1,4 +1,4 @@
-import analyse from './index.mjs';
+import { analyseText } from './index.mjs';
 
 function languageCode(language) {
 	switch (language) {
@@ -8,7 +8,7 @@ function languageCode(language) {
 	}
 }
 
-function placeholderWord(language) {
+function placeholderText(language) {
 	switch (language) {
 	case 'Quenya': return 'Elessar';
 	case 'Sindarin': return 'Mithrandir';
@@ -16,8 +16,7 @@ function placeholderWord(language) {
 	}
 }
 
-function display(word, language) {
-	const { syllableBreaks, stressedSyllable } = analyse(word, language);
+function displayWord({ word, syllableBreaks, stressedSyllable }, language) {
 	const span = document.createElement('span');
 	span.classList.add('word', `word-${language}`);
 	span.lang = languageCode(language);
@@ -35,40 +34,55 @@ function display(word, language) {
 	return span;
 }
 
+function displayText(text, language) {
+	const segments = analyseText(text, language);
+	const span = document.createElement('span');
+	span.classList.add('text', `text-${language}`);
+	span.lang = languageCode(language);
+	for (const segment of segments) {
+		if (typeof segment === 'string') {
+			span.append(segment);
+		} else {
+			span.append(displayWord(segment, language));
+		}
+	}
+	return span;
+}
+
 function languageValue() {
 	return document.querySelector('input[name=language]:checked').value;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-	const wordInput = document.getElementById('word-input');
-	function updateWord() {
-		const word = wordInput.value.normalize('NFC');
+	const textInput = document.getElementById('text-input');
+	function updateText() {
+		const text = textInput.value;
 		const language = languageValue();
-		const oldWord = document.getElementById('word');
-		if (oldWord.textContent === word && oldWord.lang === languageCode(language)) {
+		const oldText = document.getElementById('text');
+		if (oldText.textContent === text && oldText.lang === languageCode(language)) {
 			return;
 		}
-		const newWord = display(word, language);
-		newWord.id = oldWord.id;
-		oldWord.replaceWith(newWord);
-		wordInput.lang = newWord.lang;
+		const newText = displayText(text, language);
+		newText.id = oldText.id;
+		oldText.replaceWith(newText);
+		textInput.lang = newText.lang;
 	}
 	function updatePlaceholder() {
-		wordInput.placeholder = placeholderWord(languageValue());
+		textInput.placeholder = placeholderText(languageValue());
 	}
 	const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-	function listenOnWordInput() {
-		wordInput.removeEventListener('change', updateWord);
-		wordInput.removeEventListener('input', updateWord);
-		wordInput.addEventListener(prefersReducedMotionQuery.matches ? 'change' : 'input', updateWord);
+	function listenOnTextInput() {
+		textInput.removeEventListener('change', updateText);
+		textInput.removeEventListener('input', updateText);
+		textInput.addEventListener(prefersReducedMotionQuery.matches ? 'change' : 'input', updateText);
 	}
-	prefersReducedMotionQuery.addListener(listenOnWordInput);
-	listenOnWordInput();
-	document.getElementById('analyse').addEventListener('click', updateWord);
+	prefersReducedMotionQuery.addListener(listenOnTextInput);
+	listenOnTextInput();
+	document.getElementById('analyse').addEventListener('click', updateText);
 	document.querySelectorAll('input[name=language]').forEach((languageInput) => {
-		languageInput.addEventListener('input', updateWord);
+		languageInput.addEventListener('input', updateText);
 		languageInput.addEventListener('input', updatePlaceholder);
 	});
-	updateWord();
+	updateText();
 	updatePlaceholder();
 });

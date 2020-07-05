@@ -13,13 +13,13 @@
 			<h1>Tolkien Stress Analyser</h1>
 			<fieldset class="form-group">
 				<legend>
-					<label for="word-input">The word to analyse:</label>
+					<label for="text-input">The text to analyse:</label>
 				</legend>
-				<input id="word-input" class="form-control" type="text" lang="sjn" placeholder="Mithrandir">
+				<input id="text-input" class="form-control" type="text" lang="sjn" placeholder="Mithrandir">
 			</fieldset>
 			<fieldset class="form-group">
 				<legend id="language-explanation" class="form-text">
-					The language of the word:
+					The language of the text:
 					<span class="small text-muted">(when in doubt, try Sindarin)</span>
 				</legend>
 				<div class="form-check">
@@ -34,8 +34,8 @@
 			<button id="analyse" type="button" class="btn btn-primary">Analyse</button>
 			<p class="form-text">
 				Result:
-				<output for="word-input language">
-					<span id="word"></span>
+				<output for="text-input language">
+					<span id="text"></span>
 				</output>
 			</p>
 			<div class="card">

@@ -1,6 +1,6 @@
 {
 	"name": "tolkien-stress",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "A function and website to determine the stressed syllable of a word in one of Tolkien’s languages.",
 	"main": "index.mjs",
 	"scripts": {

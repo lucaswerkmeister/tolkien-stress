@@ -23,6 +23,7 @@ module.exports = {
 		'default-case': 'off', // no need for default cases
 		'import/extensions': 'off', // import with extension required on the web
 		'no-plusplus': 'off', // index.mjs is fairly C-ish, ++/-- make sense
+		'no-restricted-syntax': 'off', // for-of is disallowed because regenerator-runtime is heavyweight, but we don’t polyfill
 		'no-tabs': 'off', // see indent
 	},
 };
