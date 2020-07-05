@@ -33,6 +33,7 @@ describe('analyseWord', () => {
 		'A|marth',
 		'A|mon',
 		'A|ra|gorn',
+		'ar|NOE|di|ad',
 		'be|LE|ri|and',
 		'BO|ro|mir',
 		'bra|GOL|lach',

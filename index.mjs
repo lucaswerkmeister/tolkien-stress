@@ -56,7 +56,7 @@ export function analyseWord(word, language) {
 			vowel = true;
 			switch (previousLetter) {
 			case 'a':
-			case 'e':
+			case 'o':
 				diphthong = sindarin;
 				break;
 			}
