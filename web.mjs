@@ -18,7 +18,7 @@ function placeholderText(language) {
 
 function displayWord({ word, syllableBreaks, stressedSyllable }, language) {
 	const span = document.createElement('span');
-	span.classList.add('word', `word-${language}`);
+	span.classList.add('word');
 	span.lang = languageCode(language);
 	for (let i = 0; i < syllableBreaks.length - 1; i++) {
 		const start = syllableBreaks[i];
@@ -37,7 +37,7 @@ function displayWord({ word, syllableBreaks, stressedSyllable }, language) {
 function displayText(text, language) {
 	const segments = analyseText(text, language);
 	const span = document.createElement('span');
-	span.classList.add('text', `text-${language}`);
+	span.classList.add('text');
 	span.lang = languageCode(language);
 	for (const segment of segments) {
 		if (typeof segment === 'string') {
