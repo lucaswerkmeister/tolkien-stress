@@ -105,7 +105,7 @@ export default function analyse(word, language) {
 			break;
 		case 'ý':
 		case 'ŷ':
-			vowel = language === 'Sindarin';
+			vowel = sindarin;
 			long = vowel;
 			break;
 		case 'h':
