@@ -186,8 +186,8 @@ export function analyseWord(word, language) {
  */
 export function analyseText(text, language) {
 	text = text.normalize('NFC'); // eslint-disable-line no-param-reassign
-	// based on https://stackoverflow.com/a/57290540/1420237 – effectively \b.+?\b, but with Unicode-aware \b
-	const wordRegexp = /(?:(?<=\p{L})(?=\P{L})|(?<=\P{L})(?=\p{L})|^).+?(?:(?<=\p{L})(?=\P{L})|(?<=\P{L})(?=\p{L})|$)/ug;
+	// based on https://stackoverflow.com/a/57290540/1420237 – effectively \b.+?\b, but with Unicode-aware \b and newline-including .
+	const wordRegexp = /(?:(?<=\p{L})(?=\P{L})|(?<=\P{L})(?=\p{L})|^)[^]+?(?:(?<=\p{L})(?=\P{L})|(?<=\P{L})(?=\p{L})|$)/ug;
 	let match;
 	let endOfLastMatch;
 	let matchIsWord = true;

@@ -15,3 +15,7 @@
 		display: unset;
 	}
 }
+
+#text {
+	white-space: pre-wrap;
+}

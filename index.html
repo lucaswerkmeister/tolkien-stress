@@ -15,7 +15,7 @@
 				<legend>
 					<label for="text-input">The text to analyse:</label>
 				</legend>
-				<input id="text-input" class="form-control" type="text" lang="sjn" placeholder="Mithrandir">
+				<textarea id="text-input" class="form-control" lang="sjn" rows="1" placeholder="Mithrandir"></textarea>
 			</fieldset>
 			<fieldset class="form-group">
 				<legend id="language-explanation" class="form-text">
@@ -32,13 +32,11 @@
 				</div>
 			</fieldset>
 			<button id="analyse" type="button" class="btn btn-primary">Analyse</button>
-			<p class="form-text">
-				Result:
-				<output for="text-input language">
-					<span id="text"></span>
-				</output>
-			</p>
-			<div class="card">
+			<h2>Result</h2>
+			<output for="text-input language">
+				<span id="text"></span>
+			</output>
+			<div class="card mt-5">
 				<h2 class="card-header">How does this work?</h2>
 				<div class="card-body">
 					<p>
