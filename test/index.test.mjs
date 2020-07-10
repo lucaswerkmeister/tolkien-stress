@@ -98,6 +98,34 @@ describe('analyseWord', () => {
 			expect(stressedSyllable).to.equal(expectedStressedSyllable);
 		});
 	}
+
+	const quenyaDiphthongs = [
+		'ui',
+		'oi',
+		'ai',
+		'iu',
+		'eu',
+		'au',
+	];
+	const sindarinDiphthongs = [
+		'ae',
+		'ai',
+		'ei',
+		'oe',
+		'ui',
+		'au',
+	];
+	const diphthongs = [
+		...quenyaDiphthongs.map((diphthong) => [diphthong, 'Quenya']),
+		...sindarinDiphthongs.map((diphthong) => [diphthong, 'Sindarin']),
+	];
+	for (const [diphthong, language] of diphthongs) {
+		it(`correctly analyses diphthong ${diphthong} in ${language}`, () => {
+			const { syllableBreaks, stressedSyllable } = analyseWord(diphthong, language);
+			expect(syllableBreaks).to.eql([0, 2]);
+			expect(stressedSyllable).to.equal(0);
+		});
+	}
 });
 
 describe('analyseText', () => {
