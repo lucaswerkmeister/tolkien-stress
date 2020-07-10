@@ -66,6 +66,8 @@ describe('analyseWord', () => {
 		'MO|ri|a',
 		'MUIL',
 		'nar|GOTH|rond',
+		'NAUG|rim',
+		'NAUG|la|mír',
 		'ne|NUI|al',
 		'os|GI|li|ath',
 		'pe|LEN|nor',
