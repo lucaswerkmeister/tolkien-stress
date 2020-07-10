@@ -13,6 +13,7 @@ describe('analyseWord', () => {
 		'e|LEN|dil',
 		'e|len|TÁ|ri',
 		'e|LES|sar',
+		'EN|qui|ë',
 		'e|ÖN|we',
 		'e|RES|së|a',
 		'HYAR|men',

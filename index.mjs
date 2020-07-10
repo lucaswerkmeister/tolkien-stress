@@ -29,7 +29,10 @@ export function analyseWord(word, language) {
 		// note: we iterate over chars, not code points;
 		// should make no difference since all needed characters are BMP
 		const letter = word[i].toLowerCase();
-		const previousLetter = i > 0 ? word[i - 1].toLowerCase() : undefined;
+		let previousLetter = i > 0 ? word[i - 1].toLowerCase() : undefined;
+		if (previousLetter === 'u' && i > 1 && word[i - 2].toLowerCase() === 'q') {
+			previousLetter = 'w'; // for cw, see below
+		}
 		/** Does this position count as a vowel for the purposes of syllabification? */
 		let vowel = false;
 		/** If yes, is it a long vowel or diphthong? */
