@@ -70,6 +70,8 @@ describe('analyseWord', () => {
 		'NAUG|la|mír',
 		'ne|NUI|al',
 		'os|GI|li|ath',
+		'pa|LAN|tír',
+		'pa|lan|TÍ|ri',
 		'pe|LEN|nor',
 		'pe|ri|AN|nath',
 		'si|LIV|ren',
