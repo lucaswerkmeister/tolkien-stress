@@ -6,6 +6,11 @@
 	font-style: italic;
 }
 
+.wrong {
+	background: #fee7e6; /* Wikimedia Red90 */
+	border-radius: 0.5ex;
+}
+
 #analyse {
 	display: none;
 }
