@@ -10,14 +10,6 @@ A website to determine the stressed syllable of a word in one of Tolkien’s lan
   - [Sindarin dictionary](https://www.jrrvf.com/hisweloke/sindar/online/sindar/dict-sd-en.html)
   - [Tolkien Gateway](http://tolkiengateway.net/), where most articles helpfully have an “Etymology” section
 
-## Missing features
-
-I would like to support the analysis of not just individual words,
-but phrases like “Amon Amarth” or “Emyn Muil”,
-showing the correct stress in each word.
-Tied in with this is the correct analysis of hyphenated words like “Gil-galad” and “Barad-dûr”,
-because I believe each component there needs to be analysed separately as well.
-
 ## License
 
 This software is published under the ISC license,
