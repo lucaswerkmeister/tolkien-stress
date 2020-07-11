@@ -26,6 +26,7 @@ describe('analyseWord', () => {
 		'SAU|ron',
 		'ta|NI|que|til',
 		'tu|RAM|bar',
+		'un|DÓ|mi|el',
 		'u|TUM|no',
 	];
 	const sindarinTestCases = [
@@ -57,9 +58,11 @@ describe('analyseWord', () => {
 		'fi|NAR|fin',
 		'FO|ro|chel',
 		'GA|la|dhon',
+		'ga|LAD|ri|el',
 		'GWAI|hir',
 		'GROND',
 		'i|THI|li|en',
+		'loth|LÓ|ri|en',
 		'me|NEG|roth',
 		'mi|THEI|thel',
 		'mith|RAN|dir',
