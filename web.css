@@ -24,3 +24,7 @@
 #text {
 	white-space: pre-wrap;
 }
+
+.show-syllable-breaks .syllable:not(:last-child) {
+	border-right: 1px solid #a2a9b1; /* Wikimedia Base50 */
+}

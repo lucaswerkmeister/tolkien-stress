@@ -87,4 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	updateText();
 	updatePlaceholder();
+	const showSyllableBreaks = document.getElementById('show-syllable-breaks');
+	function updateShowSyllableBreaks() {
+		document.body.classList.toggle('show-syllable-breaks', showSyllableBreaks.checked);
+	}
+	showSyllableBreaks.addEventListener('input', updateShowSyllableBreaks);
+	updateShowSyllableBreaks();
 });
