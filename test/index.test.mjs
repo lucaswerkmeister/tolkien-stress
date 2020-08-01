@@ -90,10 +90,11 @@ describe('analyseWord', () => {
 		const expectedSyllableBreaks = [0];
 		let expectedStressedSyllable = null;
 		const syllables = testCase.split('|');
-		for (let [i, syllable] of syllables.entries()) {
-			word += syllable.toLowerCase();
+		for (const [i, syllable] of syllables.entries()) {
+			const lowerSyllable = syllable.toLowerCase();
+			word += lowerSyllable;
 			expectedSyllableBreaks.push(word.length);
-			if (syllable.toUpperCase() === syllable) {
+			if (syllable !== lowerSyllable) {
 				expectedStressedSyllable = i;
 			}
 		}
