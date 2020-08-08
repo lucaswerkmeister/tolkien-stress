@@ -61,6 +61,7 @@ describe('analyseWord', () => {
 		'ga|LAD|ri|el',
 		'GWAI|hir',
 		'GROND',
+		'im|LAD|ris', // might actually be IM|la|dris, muta cum liquida
 		'i|THI|li|en',
 		'loth|LÓ|ri|en',
 		'me|NEG|roth',
@@ -69,7 +70,7 @@ describe('analyseWord', () => {
 		'mo|RAN|non',
 		'MO|ri|a',
 		'MUIL',
-		'nar|GOTH|rond',
+		'nar|GOTH|rond', // might actually be NAR|go|thrond, muta cum liquida
 		'NAUG|rim',
 		'NAUG|la|mír',
 		'ne|NUI|al',
