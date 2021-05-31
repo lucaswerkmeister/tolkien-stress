@@ -155,10 +155,12 @@ export function analyseWord(word, language) {
 
 	// push the syllable break at the beginning, if it didn’t close already
 	if (!(syllableBreaks[syllableBreaks.length - 1] === 0)) {
-		if (haveVowel) {
-			syllableBreaks.push(0);
-		} else {
+		if (!haveVowel && syllableBreaks.length > 0) {
+			// move last syllable break to beginning
 			syllableBreaks[syllableBreaks.length - 1] = 0;
+		} else {
+			// push a new one
+			syllableBreaks.push(0);
 		}
 	}
 

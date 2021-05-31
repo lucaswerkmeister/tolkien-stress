@@ -134,6 +134,25 @@ describe('analyseWord', () => {
 			expect(stressedSyllable).to.equal(0);
 		});
 	}
+
+	const prefixCases = [
+		[ 'Hyarmen', 'Quenya' ],
+		[ 'Eärendil', 'Quenya' ],
+		[ 'Bragollach', 'Sindarin' ],
+		[ 'Aman', 'Sindarin' ],
+	];
+	for (const [word, language] of prefixCases) {
+		for (let i = 1; i <= word.length; i++) {
+			it(`validly analyses ${i}-prefix of ${word} in ${language}`, () => {
+				const prefix = word.substring(0, i);
+				const { syllableBreaks } = analyseWord(prefix, language);
+				// test that syllableBreaks doesn’t have any negative indices
+				const syllableBreaksArray = [...syllableBreaks];
+				expect(syllableBreaksArray).to.eql(syllableBreaks);
+				expect(Object.keys(syllableBreaksArray)).to.eql(Object.keys(syllableBreaks));
+			});
+		}
+	}
 });
 
 describe('analyseText', () => {
