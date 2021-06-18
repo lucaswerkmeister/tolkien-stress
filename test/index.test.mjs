@@ -61,7 +61,9 @@ describe('analyseWord', () => {
 		'ga|LAD|ri|el',
 		'GWAI|hir',
 		'GROND',
+		'IAR|wain',
 		'im|LAD|ris', // might actually be IM|la|dris, muta cum liquida
+		'IO|reth',
 		'i|THI|li|en',
 		'loth|LÓ|ri|en',
 		'me|NEG|roth',

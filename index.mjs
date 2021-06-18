@@ -128,6 +128,8 @@ export function analyseWord(word, language) {
 		if (diphthong) {
 			long = true;
 			i--;
+		} else if (vowel && sindarin && previousLetter === 'i' && i === 1) {
+			i--;
 		}
 
 		if (haveVowel) {
