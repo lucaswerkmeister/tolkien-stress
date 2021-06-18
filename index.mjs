@@ -119,6 +119,10 @@ export function analyseWord(word, language) {
 			case 't':
 				i--;
 				break;
+			case 'p':
+				i--;
+				consonantsSinceLastVowel++;
+				break;
 			}
 		}
 		if (diphthong) {
