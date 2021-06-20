@@ -26,6 +26,9 @@
 		"url": "https://github.com/lucaswerkmeister/tolkien-stress/issues"
 	},
 	"homepage": "https://github.com/lucaswerkmeister/tolkien-stress#readme",
+	"files": [
+		"index.mjs"
+	],
 	"devDependencies": {
 		"chai": "^4.2.0",
 		"eslint": "^7.29.0",
