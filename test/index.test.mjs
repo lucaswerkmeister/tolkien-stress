@@ -4,6 +4,7 @@ import 'chai/register-expect.js';
 describe('analyseWord', () => {
 	const quenyaTestCases = [
 		'ai|nu|LIN|da|lë',
+		'al|DIN|ga',
 		'an|CA|li|ma',
 		'an|DÚ|ril',
 		'a|TA|que',
