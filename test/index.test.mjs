@@ -60,8 +60,8 @@ describe('analyseWord', () => {
 		'FO|ro|chel',
 		'GA|la|dhon',
 		'ga|LAD|ri|el',
-		'GWAI|hir',
 		'GROND',
+		'GWAI|hir',
 		'IAR|wain',
 		'im|LAD|ris', // might actually be IM|la|dris, muta cum liquida
 		'IO|reth',
